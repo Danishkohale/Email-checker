@@ -15,7 +15,7 @@ RUN pip install django-prometheus
 RUN wget https://dlm.mariadb.com/2678574/Connectors/c/connector-c-3.3.3/mariadb-connector-c-3.3.3-debian-bullseye-amd64.tar.gz -O - | tar -zxf - --strip-components=1 -C /usr
 
 
-COPY requirements.txt . 
+COPY Email-checker/requirements.txt . 
 RUN pip install -r requirements.txt
 
 COPY . .
