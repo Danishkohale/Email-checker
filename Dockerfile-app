@@ -25,6 +25,7 @@ EXPOSE 5432:5432
 EXPOSE 8000  
 HEALTHCHECK CMD curl --fail http://localhost:$PORT/health/ || exit 1
 CMD ["export DJANGO_SETTINGS_MODULE=emailchecker.settings"]
-CMD ["./startup.sh"]
+
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
 #ENTRYPOINT ["python", "manage.py", "runserver", "0.0.0.0:8000"]
